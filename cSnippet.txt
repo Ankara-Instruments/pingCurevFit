@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+
+double getDuty(double x) {
+    double a = 2.544169611307419e+4;
+    double b = 2.236410629423207e+8;
+    double c = 1.293484973688578e+14;
+    double term1 = x * a + sqrt(pow(x * a - b, 2) + c) - b;
+    double term2 = pow(term1, 1.0 / 3.0);
+    double duty = (1.0 / term2) * (-5.057320329772607e+4) + term2 + 6.976274608783439e+2;
+    return duty;
+}
